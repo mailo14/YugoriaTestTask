@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Прохождение теста";
+}
+<h3>@ViewBag.testName:</h3>
+<div>
+    <form method="post" id="myform" action="/Home/PassTest">
+        <input type="hidden" name="ftId" value="@ViewBag.ftId" />
+        @{int num = 0; }
+        @foreach (var q in ViewBag.Questions)
+        {
+            <div style="margin-bottom: 10px;">
+                <label>Вопрос @(++num). </label>
+                <label>@q.Text </label>
+
+                <div style="padding-left: 10px;">
+                    @if (q.Type != QuestionType.typeText)
+                    {
+                        foreach (var v in q.Variants)
+                        {
+                            <div>
+                                <input id="@v.Id"
+                                       type="@(q.Type == QuestionType.selectMany ? "checkbox" : "radio")"
+                                       value="@v.Id"
+                                       checked=@ViewBag.CheckAnswers.ContainsKey(v.Id)
+                                       name="checkAnswers[@q.Id]" />
+                                <label for="@v.Id">@v.Text</label>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <input type="text" placeholder="ответ на вопрос"
+                                   name="textAnswers[@q.Id]"
+                                   value="@(ViewBag.TextAnswers.ContainsKey(q.Id)?ViewBag.TextAnswers[q.Id]:"")" />
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        <div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </div>
+    </form>
+</div>

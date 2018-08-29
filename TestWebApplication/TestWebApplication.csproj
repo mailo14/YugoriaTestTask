@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -146,9 +152,57 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808280408507_InitialCreate.cs" />
+    <Compile Include="Migrations\201808280408507_InitialCreate.Designer.cs">
+      <DependentUpon>201808280408507_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808280419249_AddQuestion.cs" />
+    <Compile Include="Migrations\201808280419249_AddQuestion.Designer.cs">
+      <DependentUpon>201808280419249_AddQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808280427114_AddQuestionFK.cs" />
+    <Compile Include="Migrations\201808280427114_AddQuestionFK.Designer.cs">
+      <DependentUpon>201808280427114_AddQuestionFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808280447436_AddVariants.cs" />
+    <Compile Include="Migrations\201808280447436_AddVariants.Designer.cs">
+      <DependentUpon>201808280447436_AddVariants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808280503572_AddFactTest.cs" />
+    <Compile Include="Migrations\201808280503572_AddFactTest.Designer.cs">
+      <DependentUpon>201808280503572_AddFactTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808280507278_UpdContext.cs" />
+    <Compile Include="Migrations\201808280507278_UpdContext.Designer.cs">
+      <DependentUpon>201808280507278_UpdContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808280513041_UpdContext1.cs" />
+    <Compile Include="Migrations\201808280513041_UpdContext1.Designer.cs">
+      <DependentUpon>201808280513041_UpdContext1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808280728390_UpdContext2.cs" />
+    <Compile Include="Migrations\201808280728390_UpdContext2.Designer.cs">
+      <DependentUpon>201808280728390_UpdContext2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808290338575_name.cs" />
+    <Compile Include="Migrations\201808290338575_name.Designer.cs">
+      <DependentUpon>201808290338575_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\TextAnswer.cs" />
+    <Compile Include="Models\CheckAnswer.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\TestDbContext.cs" />
+    <Compile Include="Models\FactTest.cs" />
+    <Compile Include="Models\Variant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TestDb.mdf" />
+    <Content Include="App_Data\TestDb_log.ldf">
+      <DependentUpon>TestDb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -171,7 +225,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -182,13 +238,37 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\PassTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <EmbeddedResource Include="Migrations\201808280408507_InitialCreate.resx">
+      <DependentUpon>201808280408507_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808280419249_AddQuestion.resx">
+      <DependentUpon>201808280419249_AddQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808280427114_AddQuestionFK.resx">
+      <DependentUpon>201808280427114_AddQuestionFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808280447436_AddVariants.resx">
+      <DependentUpon>201808280447436_AddVariants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808280503572_AddFactTest.resx">
+      <DependentUpon>201808280503572_AddFactTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808280507278_UpdContext.resx">
+      <DependentUpon>201808280507278_UpdContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808280513041_UpdContext1.resx">
+      <DependentUpon>201808280513041_UpdContext1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808280728390_UpdContext2.resx">
+      <DependentUpon>201808280728390_UpdContext2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808290338575_name.resx">
+      <DependentUpon>201808290338575_name.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -202,6 +282,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
