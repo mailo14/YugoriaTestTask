@@ -152,42 +152,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808280408507_InitialCreate.cs" />
-    <Compile Include="Migrations\201808280408507_InitialCreate.Designer.cs">
-      <DependentUpon>201808280408507_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808280419249_AddQuestion.cs" />
-    <Compile Include="Migrations\201808280419249_AddQuestion.Designer.cs">
-      <DependentUpon>201808280419249_AddQuestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808280427114_AddQuestionFK.cs" />
-    <Compile Include="Migrations\201808280427114_AddQuestionFK.Designer.cs">
-      <DependentUpon>201808280427114_AddQuestionFK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808280447436_AddVariants.cs" />
-    <Compile Include="Migrations\201808280447436_AddVariants.Designer.cs">
-      <DependentUpon>201808280447436_AddVariants.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808280503572_AddFactTest.cs" />
-    <Compile Include="Migrations\201808280503572_AddFactTest.Designer.cs">
-      <DependentUpon>201808280503572_AddFactTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808280507278_UpdContext.cs" />
-    <Compile Include="Migrations\201808280507278_UpdContext.Designer.cs">
-      <DependentUpon>201808280507278_UpdContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808280513041_UpdContext1.cs" />
-    <Compile Include="Migrations\201808280513041_UpdContext1.Designer.cs">
-      <DependentUpon>201808280513041_UpdContext1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808280728390_UpdContext2.cs" />
-    <Compile Include="Migrations\201808280728390_UpdContext2.Designer.cs">
-      <DependentUpon>201808280728390_UpdContext2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808290338575_name.cs" />
-    <Compile Include="Migrations\201808290338575_name.Designer.cs">
-      <DependentUpon>201808290338575_name.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\TextAnswer.cs" />
     <Compile Include="Models\CheckAnswer.cs" />
@@ -240,35 +204,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\PassTest.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808280408507_InitialCreate.resx">
-      <DependentUpon>201808280408507_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808280419249_AddQuestion.resx">
-      <DependentUpon>201808280419249_AddQuestion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808280427114_AddQuestionFK.resx">
-      <DependentUpon>201808280427114_AddQuestionFK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808280447436_AddVariants.resx">
-      <DependentUpon>201808280447436_AddVariants.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808280503572_AddFactTest.resx">
-      <DependentUpon>201808280503572_AddFactTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808280507278_UpdContext.resx">
-      <DependentUpon>201808280507278_UpdContext.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808280513041_UpdContext1.resx">
-      <DependentUpon>201808280513041_UpdContext1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808280728390_UpdContext2.resx">
-      <DependentUpon>201808280728390_UpdContext2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808290338575_name.resx">
-      <DependentUpon>201808290338575_name.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
